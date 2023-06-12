@@ -18,7 +18,6 @@ const Contact = () => {
         name: "",
         email: "",
         reason: "",
-        discord: "",
         message: "",
         captcha: "",
     };
@@ -27,18 +26,13 @@ const Contact = () => {
         name: false,
         email: false,
         reason: false,
-        discord: false,
         message: false,
         captcha: false,
     };
 
-    const ignoreError = ["discord"];
+    const ignoreError = [];
 
     const selectReason = [
-        {
-            value: "Reporte de conductor",
-            label: "Reporte de usuario",
-        },
         {
             value: "Contacto administrativo",
             label: "Contacto administrativo",
@@ -197,16 +191,6 @@ const Contact = () => {
                             label="Email"
                             variant="outlined"
                             value={data.dataValues.email}
-                            onChange={handleChangeText}
-                        />
-                        <TextField
-                            color="info"
-                            inputProps={{ maxLength: 200 }}
-                            error={data.dataError.discord}
-                            id="discord"
-                            label="Discord"
-                            variant="outlined"
-                            value={data.dataValues.discord}
                             onChange={handleChangeText}
                         />
                     </div>

@@ -1,97 +1,76 @@
-import { useEffect, useState, useRef } from "react";
-import useFetch from "../../hooks/useFetch";
 import { useDarkMode } from "../../hooks/contex/DarkModeContex";
-import MemberCard from "../../components/MemberCard";
-import ErrorData from "../../components/ErrorData";
 import { Typography } from "@mui/material";
-import Pagination from "@mui/material/Pagination";
-import Stack from "@mui/material/Stack";
-import ModalLoading from "../../components/ModalLoading";
-import { TITLE, REST_API_URL } from "../../helpers/configs";
+import { TITLE } from "../../helpers/configs";
+import MemberCard from "../../components/MemberCard";
+
+// photos
+import p1 from "../../static/img/employees_photos/1.jpg";
+import p2 from "../../static/img/employees_photos/2.jpg";
+import p3 from "../../static/img/employees_photos/3.jpg";
+import p5 from "../../static/img/employees_photos/5.jpg";
+import p6 from "../../static/img/employees_photos/6.jpg";
+
+const listEmployees = [
+    {
+        id: 1,
+        username: "CAROLINA MENDOZA",
+        roleName: "COMMUNITY MANAGER",
+        imgLink: p1,
+    },
+    {
+        id: 2,
+        username: "NICOLAS MACHUCA",
+        roleName: "FINANZAS",
+        imgLink: p2,
+    },
+    {
+        id: 3,
+        username: "ALINE SUAREZ",
+        roleName: "MARKETING",
+        imgLink: p3,
+    },
+    {
+        id: 4,
+        username: "FERNANDO GARRIDO",
+        roleName: "DESARROLLADOR Y PROGRAMADOR",
+        imgLink: "https://i.imgur.com/xz34fmF.jpg",
+    },
+    {
+        id: 5,
+        username: "MARÍA POBLETE",
+        roleName: "DIRECTOR DE OPERACIONES",
+        imgLink: p5,
+    },
+    {
+        id: 6,
+        username: "MARIA SALGADO",
+        roleName: "DIRECTORA EJECUTIVA",
+        imgLink: p6,
+    },
+];
 
 const Employees = () => {
     document.title = TITLE + " | Miembros";
-    const [Response, setResponse] = useState(false);
-    const loaded = useRef(false);
-    const totalItems = useRef(0);
+
     const { themeTatailwind } = useDarkMode();
 
-    // eslint-disable-next-line
-    const [loading, error, succes, bodyResponse] = useFetch(
-        `${REST_API_URL}/getMembers/`,
-        "GET",
-        {
-            "Content-Type": "application/json",
-        }
-    );
-
-    // pagination
-    const [page, setPage] = useState(1);
-    const handleChange = (event, page) => {
-        setPage(page);
-    };
-
-    const itemsPerPage = 12; // 12 items per page
-    const startIndex = (page - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-
-    const getMembers = async () => {
-        const fetchResponse = await bodyResponse();
-        if (fetchResponse.status === 200) {
-            setResponse((await fetchResponse.json()).response.members);
-        }
-    };
-
-    useEffect(() => {
-        if (!loaded.current) {
-            getMembers();
-            loaded.current = true;
-        } // eslint-disable-next-line
-    }, []);
-
     const renderPage = () => {
-        if (!Response) return <></>;
-        totalItems.current = Response.length;
-        let newListCopy = JSON.parse(JSON.stringify(Response));
-        newListCopy = newListCopy.slice(startIndex, endIndex);
         return (
             <>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 self-center gap-10 md:gap-8 p-3">
-                    {newListCopy.map((member) => {
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 self-center gap-10 md:gap-8 p-3">
+                    {listEmployees.map((member) => {
                         return (
                             <MemberCard
                                 key={member.id}
-                                id={member.user_id}
                                 username={member.username}
-                                roleName={member.role}
-                                dateJoin={member.joinDate}
+                                roleName={member.roleName}
+                                imgLink={member.imgLink}
                             />
                         );
                     })}
                 </div>
-                <div className="flex justify-center pb-5">
-                    <Stack spacing={2}>
-                        <Pagination
-                            count={Math.ceil(totalItems.current / itemsPerPage)}
-                            page={page}
-                            onChange={(event, page) =>
-                                handleChange(event, page)
-                            }
-                            variant="outlined"
-                            shape="rounded"
-                        />
-                    </Stack>
-                </div>
             </>
         );
-    };
-
-    const checkError = () => {
-        if (error) {
-            return <ErrorData msj={"Error al cargar los miembros"} />;
-        } else if (!loading) {
-            return renderPage();
-        }
     };
 
     return (
@@ -101,9 +80,7 @@ const Employees = () => {
                     <b>Nuestros Empleados</b>
                 </Typography>
             </div>
-            <ModalLoading open={loading} />
-
-            {checkError()}
+            {renderPage()}
         </div>
     );
 };

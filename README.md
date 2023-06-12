@@ -27,12 +27,6 @@ REACT_APP_CAPTCHA_KEY=recaptcha_v2_site_key
 }
 ```
 
-##### Variable Explanation
-
--   **staff**: You will need the VTC role ID in TruckersMP
--   **partners**: The data of the allied vtc _(you have to save the images in the backend)_ [getPartnerLogo](https://github.com/CoffeSiberian/losandes-express-site/blob/main/routes/getPartnerLogo.ts "getPartnerLogo")
--   **hall_of_fame**: Created to list employees within your **discord server** who stand out in some way
-
 ---
 
 ##### How to use

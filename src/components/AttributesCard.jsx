@@ -41,7 +41,7 @@ const AttributesCard = () => {
         return (
             <div
                 key={id}
-                className={`flex flex-col ${themeTatailwind.secundary.main} max-w-lg rounded-lg border-2 border-transparent ${themeTatailwind.primary.border_color} shadow-2xl gap-3 m-4 p-4`}
+                className={`flex flex-col ${themeTatailwind.secundary.main} max-w-md rounded-lg border-2 border-transparent ${themeTatailwind.primary.border_color} shadow-2xl gap-3 m-4 p-4`}
             >
                 <Typography
                     className="flex justify-center"
@@ -72,7 +72,7 @@ const AttributesCard = () => {
     const renderAttributesP1 = () => {
         const divAtributes = Atributes.slice(0, 3);
         return (
-            <div className="flex flex-col md:flex-row">
+            <div className="grid grid-cols-1 md:grid-cols-3">
                 {divAtributes.map((atribute, index) => {
                     return AttributeCard(
                         index,
@@ -88,7 +88,7 @@ const AttributesCard = () => {
     const renderAttributesP2 = () => {
         const divAtributes = Atributes.slice(3, 5);
         return (
-            <div className="flex flex-col md:flex-row">
+            <div className="grid grid-cols-1">
                 {divAtributes.map((atribute, index) => {
                     return AttributeCard(
                         index,
