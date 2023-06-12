@@ -1,13 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import Slide from "@mui/material/Slide";
-import slide1 from "../static/img/slide_img/1.jpg";
-import slide2 from "../static/img/slide_img/2.jpg";
-import slide3 from "../static/img/slide_img/3.jpg";
-import slide4 from "../static/img/slide_img/4.jpg";
-import slide5 from "../static/img/slide_img/5.jpg";
+import im1 from "../static/img/slide_img/1.jpg";
+import im2 from "../static/img/slide_img/2.jpg";
+import im3 from "../static/img/slide_img/3.jpg";
 
 const Slider = () => {
-    const [slide, setSlide] = useState(slide1);
+    const [slide, setSlide] = useState(im1);
     const [anim, setAnim] = useState(true);
     const currentSlide = useRef(1);
 
@@ -16,7 +14,7 @@ const Slider = () => {
     };
 
     useEffect(() => {
-        const slides = [slide1, slide2, slide3, slide4, slide5];
+        const slides = [im1, im2, im3];
         const changeSlide = async () => {
             setAnim(false);
             if (currentSlide.current === slides.length) {

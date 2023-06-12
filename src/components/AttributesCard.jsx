@@ -7,40 +7,33 @@ import PeopleRoundedIcon from "@mui/icons-material/PeopleRounded";
 import AdminPanelSettingsRoundedIcon from "@mui/icons-material/AdminPanelSettingsRounded";
 import FlagRoundedIcon from "@mui/icons-material/FlagRounded";
 import EmojiEventsRoundedIcon from "@mui/icons-material/EmojiEventsRounded";
-import HandshakeRoundedIcon from "@mui/icons-material/HandshakeRounded";
 
 const AttributesCard = () => {
     const { themeTatailwind } = useDarkMode();
     const Atributes = [
         {
-            atribute: "Andes Community",
+            atribute: "La sustentabilidad dentro ti",
             description:
-                "Una comunidad de camioneros virtuales apasionados que crea una experiencia realista y entretenida para sus miembros.",
+                "Sé sustentable, haz tu parte. Recicla tus desechos electrónicos y reduce el consumo de energía. Pequeñas acciones pueden hacer una gran  diferencia. ¿Qué puedes hacer hoy para proteger nuestro planeta?",
             icon: <PeopleRoundedIcon fontSize="large" />,
         },
         {
-            atribute: "Andes Staff & drivers",
+            atribute: "El producto de  hoy, prospera mañana",
             description:
-                "Un equipo interno dedicado a brindar el mejor soporte y asistencia a los conductores para una experiencia gratificante en Los Andes.",
+                "Elige productos sostenibles para un futuro próspero. Piensa en las generaciones venideras y en el impacto que tus decisiones pueden tener  en el planeta.",
             icon: <AdminPanelSettingsRoundedIcon fontSize="large" />,
         },
         {
-            atribute: "International convoys",
+            atribute: "Una acción para una solución",
             description:
-                "Emocionantes convoys internacionales que permiten unirse a la comunidad global de camioneros virtuales y demostrar habilidades en la carretera.",
+                "Cada pequeña acción cuenta. ¿Qué harás hoy para contribuir a un futuro más sostenible?",
             icon: <FlagRoundedIcon fontSize="large" />,
         },
         {
-            atribute: "Competition & events",
+            atribute: "Si buscas resultados distintos sigue tu instinto",
             description:
-                "Competencias y eventos que agregan emoción y diversión a la comunidad, promoviendo habilidades de conducción y alcanzando nuevas metas.",
+                "Confía en ti mismo para encontrar nuevas soluciones sostenibles. ¿Qué cambios puedes hacer hoy para proteger el medio ambiente?",
             icon: <EmojiEventsRoundedIcon fontSize="large" />,
-        },
-        {
-            atribute: "Partners program",
-            description:
-                "Programa de asociación estratégica y colaboración con otras empresas afines, ofreciendo beneficios mutuos y fortaleciendo la comunidad.",
-            icon: <HandshakeRoundedIcon fontSize="large" />,
         },
     ];
 

@@ -1,9 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import { useDarkMode } from "../hooks/contex/DarkModeContex";
 import { Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
-import HowToRegRoundedIcon from "@mui/icons-material/HowToRegRounded";
+import { TITLE } from "../helpers/configs";
+import DomainRoundedIcon from "@mui/icons-material/DomainRounded";
 import Button from "@mui/material/Button";
-import my_welcome from "../static/img/my_welcome.jpeg";
+import my_welcome from "../static/img/welcome.png";
 
 const JoinCard = () => {
     const { themeTatailwind } = useDarkMode();
@@ -28,29 +29,26 @@ const JoinCard = () => {
                             color={themeTatailwind.primary.color}
                             variant="h4"
                         >
-                            <b>¡Bienvenidos a Los Andes VTC!</b>
+                            <b>¡Bienvenidos a {TITLE}!</b>
                         </Typography>
                         <Typography
                             color={themeTatailwind.primary.color}
                             variant="subtitle1"
                         >
-                            ¡Únete a Los Andes VTC y descubre la pasión por el
-                            transporte en Euro Truck Simulator! Somos una
-                            comunidad de conductores latinoamericanos
-                            comprometidos con la excelencia. Participamos en
-                            convoys mundiales y privados, construyendo una
-                            empresa reconocida por su profesionalismo y carisma
-                            en el juego. ¡Embárcate en emocionantes rutas y
-                            forma parte de nuestra historia en Los Andes VTC!
+                            ¡Recicla tus dispositivos electrónicos sin uso y
+                            obtén increíbles descuentos! Ayuda al planeta y
+                            ahorra dinero al entregar tus dispositivos a
+                            empresas seleccionadas. ¡Descubre cómo obtener tu
+                            ticket de descuento hoy mismo!
                         </Typography>
                         <div className="grid content-end h-full">
                             <div className="flex justify-center">
                                 <Button
-                                    startIcon={<HowToRegRoundedIcon />}
+                                    startIcon={<DomainRoundedIcon />}
                                     variant="contained"
-                                    onClick={() => navigate("/news/29574")}
+                                    onClick={() => navigate("/contact")}
                                 >
-                                    Postularse
+                                    Contactarse
                                 </Button>
                             </div>
                         </div>

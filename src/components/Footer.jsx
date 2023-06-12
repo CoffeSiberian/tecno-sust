@@ -15,7 +15,7 @@ const Footer = () => {
         {
             name: "Instagram",
             logo: <InstagramIcon />,
-            link: "https://www.instagram.com/",
+            link: "https://www.instagram.com/_.tecnosust/",
         },
     ];
 

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDarkMode } from "../hooks/contex/DarkModeContex";
 import { styled } from "@mui/material/styles";
+import { TITLE } from "../helpers/configs";
 import logo from "../static/img/logo.png";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -13,13 +14,13 @@ import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
 
 // icons
+import QrCodeScannerRoundedIcon from "@mui/icons-material/QrCodeScannerRounded";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import AssignmentIndRoundedIcon from "@mui/icons-material/AssignmentIndRounded";
 import BusinessRoundedIcon from "@mui/icons-material/BusinessRounded";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
-import EventAvailableRoundedIcon from "@mui/icons-material/EventAvailableRounded";
 import InfoRoundedIcon from "@mui/icons-material/InfoRounded";
 import AlternateEmailRoundedIcon from "@mui/icons-material/AlternateEmailRounded";
 //
@@ -39,9 +40,9 @@ const Header = () => {
             url: "/",
         },
         {
-            icon: EventAvailableRoundedIcon,
-            text: "Eventos",
-            url: "/events",
+            icon: QrCodeScannerRoundedIcon,
+            text: "Productos de Prueba",
+            url: "/products",
         },
         {
             icon: AlternateEmailRoundedIcon,
@@ -54,7 +55,7 @@ const Header = () => {
         {
             icon: InfoRoundedIcon,
             text: "Sobre nosotros",
-            url: "/news/29575",
+            url: "/aboutus",
         },
         {
             icon: AssignmentIndRoundedIcon,
@@ -132,9 +133,9 @@ const Header = () => {
             <AppBar position="fixed">
                 <div className="flex absolute justify-center top-3 w-full">
                     <img
-                        className="drop-shadow-2xl w-32"
+                        className="drop-shadow-2xl rounded-full w-32"
                         src={logo}
-                        alt="Los Andes VTC logo"
+                        alt={TITLE + " logo"}
                     />
                 </div>
                 <MovileHeaderOptions
@@ -161,7 +162,7 @@ const Header = () => {
                         />
                     </div>
                     <div className="md:flex ml-5 hidden justify-start w-full">
-                        {HeaderOptions.slice(0, 3).map((option, index) => (
+                        {HeaderOptions.slice(0, 2).map((option, index) => (
                             <div className="flex" key={index}>
                                 <Button
                                     startIcon={<option.icon />}
@@ -232,7 +233,7 @@ const Header = () => {
                             variant="middle"
                             flexItem
                         />
-                        {HeaderOptions.slice(3).map((option, index) => (
+                        {HeaderOptions.slice(2).map((option, index) => (
                             <div className="flex" key={index}>
                                 <Button
                                     startIcon={<option.icon />}

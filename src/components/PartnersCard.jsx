@@ -1,8 +1,6 @@
-import { useNavigate } from "react-router-dom";
 import { useDarkMode } from "../hooks/contex/DarkModeContex";
 import { Typography } from "@mui/material";
-import { PARTNERS, REST_API_URL } from "../helpers/configs";
-import Button from "@mui/material/Button";
+import { PARTNERS } from "../helpers/configs";
 import Divider from "@mui/material/Divider";
 
 // icons
@@ -10,8 +8,6 @@ import HandshakeRoundedIcon from "@mui/icons-material/HandshakeRounded";
 
 const PartnersCard = () => {
     const { themeTatailwind } = useDarkMode();
-    const navigate = useNavigate();
-    const urlImage = `${REST_API_URL}/getPartnerLogo/`;
 
     const renderPartners = () => {
         return PARTNERS.map((partner, index) => {
@@ -22,8 +18,8 @@ const PartnersCard = () => {
                 >
                     <a href={partner.link} target="_blank" rel="noreferrer">
                         <img
-                            className="object-cover rounded-full drop-shadow-lg w-24 h-24"
-                            src={`${urlImage}${partner.logo}`}
+                            className="object-cover rounded-lg drop-shadow-lg w-24 h-24"
+                            src={partner.logo}
                             alt={partner.name}
                         />
                     </a>
@@ -44,19 +40,12 @@ const PartnersCard = () => {
                         variant="h4"
                     >
                         <HandshakeRoundedIcon fontSize="large" />
-                        <b>Partners oficiales</b>
+                        <b>Empresas afiliadas</b>
                     </Typography>
                     <Divider className="w-full" component="div" />
-                    <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 justify-items-center gap-4">
+                    <div className="grid grid-cols-2 justify-items-center gap-4">
                         {renderPartners()}
                     </div>
-                    <Button
-                        endIcon={<HandshakeRoundedIcon />}
-                        variant="contained"
-                        onClick={() => navigate("/news/31248")}
-                    >
-                        ¡Hazte Partner!
-                    </Button>
                 </div>
             </div>
         </div>

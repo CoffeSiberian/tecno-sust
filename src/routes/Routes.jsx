@@ -2,9 +2,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ScrollTop from "./ScrollTop";
 import Header from "../components/Header";
 import Home from "./pages/Home";
-import Events from "./pages/Events";
-import News from "./pages/News";
-import NewView from "./pages/NewView";
+import Product from "./pages/Product";
+import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import Employees from "./pages/Employees";
 import Notfound from "./pages/Notfound";
@@ -24,26 +23,18 @@ const RoutePage = () => {
                     }
                 />
                 <Route
-                    path="/events"
+                    path="/products"
                     element={
                         <>
-                            <Events />
+                            <Product />
                         </>
                     }
                 />
                 <Route
-                    path="/news"
+                    path="/aboutus"
                     element={
                         <>
-                            <News />
-                        </>
-                    }
-                />
-                <Route
-                    path="/news/:newId"
-                    element={
-                        <>
-                            <NewView />
+                            <AboutUs />
                         </>
                     }
                 />
