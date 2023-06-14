@@ -6,6 +6,8 @@ import Product from "./pages/Product";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import Employees from "./pages/Employees";
+import Discount from "./pages/Discount";
+import GPTDemo from "./pages/GPTDemo";
 import Notfound from "./pages/Notfound";
 
 const RoutePage = () => {
@@ -38,7 +40,6 @@ const RoutePage = () => {
                         </>
                     }
                 />
-
                 <Route
                     path="/contact"
                     element={
@@ -47,7 +48,6 @@ const RoutePage = () => {
                         </>
                     }
                 />
-
                 <Route
                     path="/employees"
                     element={
@@ -56,7 +56,22 @@ const RoutePage = () => {
                         </>
                     }
                 />
-
+                <Route
+                    path="/discount/:id"
+                    element={
+                        <>
+                            <Discount />
+                        </>
+                    }
+                />
+                <Route
+                    path="/gpt3"
+                    element={
+                        <>
+                            <GPTDemo />
+                        </>
+                    }
+                />
                 <Route
                     path="*"
                     element={

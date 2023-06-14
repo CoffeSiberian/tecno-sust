@@ -2,9 +2,6 @@ import { Typography } from "@mui/material";
 import { useDarkMode } from "../hooks/contex/DarkModeContex";
 import Divider from "@mui/material/Divider";
 
-// icons
-//
-
 const ProductCard = ({ img, name, price, description, QR }) => {
     const { themeTatailwind } = useDarkMode();
 

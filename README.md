@@ -4,6 +4,8 @@
 REACT_APP_TITLE=site_title
 REACT_APP_REST_API_URL=https://api.url.com
 REACT_APP_CAPTCHA_KEY=recaptcha_v2_site_key
+REACT_APP_REST_API_URL=https://api.url.com/
+REACT_APP_REST_API_PASS=password_to_use_endpoint
 ```
 
 ##### Additional settings _(required)_

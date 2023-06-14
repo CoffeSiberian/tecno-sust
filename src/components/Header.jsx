@@ -15,6 +15,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 
 // icons
 import QrCodeScannerRoundedIcon from "@mui/icons-material/QrCodeScannerRounded";
+import PrecisionManufacturingRoundedIcon from "@mui/icons-material/PrecisionManufacturingRounded";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import AssignmentIndRoundedIcon from "@mui/icons-material/AssignmentIndRounded";
@@ -43,6 +44,11 @@ const Header = () => {
             icon: QrCodeScannerRoundedIcon,
             text: "Productos de Prueba",
             url: "/products",
+        },
+        {
+            icon: PrecisionManufacturingRoundedIcon,
+            text: "Chat GPT-3 IA",
+            url: "/gpt3",
         },
         {
             icon: AlternateEmailRoundedIcon,
